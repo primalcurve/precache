@@ -35,6 +35,9 @@ from random import uniform
 from time import sleep
 from urlparse import urlparse
 
+from Foundation import NSBundle
+from WebKit import WKWebView
+import pprint
 
 # Version
 version = '1.1.2'
@@ -101,7 +104,7 @@ class PreCache(object):
         self.mesu_url = 'http://mesu.apple.com/assets'
         self.mobile_asset_path = 'com_apple_MobileAsset_SoftwareUpdate'
         self.mobile_update_xml = 'com_apple_MobileAsset_SoftwareUpdate.xml'
-        self.osx_catalog_xml = 'https://swscan.apple.com/content/catalogs/others/index-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog'  # NOQA
+        self.osx_catalog_xml = 'https://swscan.apple.com/content/catalogs/others/index-10.14-10.13-10.12-10.11-10.10-10.9-mountainlion-lion-snowleopard-leopard.merged-1.sucatalog'  # NOQA
 
         self.ios_update_feeds = {
             'watch': '%s/watch/%s/%s' % (self.mesu_url,
@@ -118,23 +121,25 @@ class PreCache(object):
         self.mas_base_url = 'http://osxapps.itunes.apple.com'
 
         # Remote plist feed of MAS apps that can be cached
-        self.mas_plist = urllib2.urlopen('https://raw.githubusercontent.com/krypted/precache/master/com.github.krypted.precache.apps-list.plist')  # NOQA
+        self.mas_plist = urllib2.urlopen('https://raw.githubusercontent.com/primalcurve/precache/master/com.github.krypted.precache.apps-list.plist')  # NOQA
         self.mas_plist = self.mas_plist.read()
 
         self.mas_assets = plistlib.readPlistFromString(self.mas_plist)
 
         # User agent strings
         self.user_agents = {
-            'app': 'MacAppStore/2.2 (Macintosh; OS X 10.12.1; 16B2555) AppleWebKit/2602.2.14.0.7',  # NOQA
-            'updates': 'Software%20Update (unknown version) CFNetwork/760.5.1 Darwin/15.5.0 (x86_64)',  # NOQA
-            'installer': 'MacAppStore/2.2 (Macintosh; OS X 10.12.1; 16B2555) AppleWebKit/2602.2.14.0.7',  # NOQA
-            'ipsw': 'com.apple.appstored iOS/10.1',
+            'app': 'MacAppStore/' + self.app_store_version() + ' (Macintosh; OS X ' + self.sw_vers_version() + '; ' + self.sw_vers_build() + ') AppleWebKit/' + self.webkit_version(),
+            'updates': 'Software%20Update (unknown version) CFNetwork/' + self.cf_network_version() + ' Darwin/' + self.kernel_version() + ' (x86_64)',  # NOQA
+            'installer': 'MacAppStore/' + self.app_store_version() + ' (Macintosh; OS X ' + self.sw_vers_version() + '; ' + self.sw_vers_build() + ') AppleWebKit/' + self.webkit_version(),  # NOQA
+            'ipsw': 'com.apple.appstored iOS/12.1.4',
             'Watch': 'com.apple.appstored',
             'AppleTV': 'com.apple.appstored',
             'iPad': 'com.apple.appstored',
             'iPhone': 'com.apple.appstored',
             'iPod': 'com.apple.appstored',
         }
+
+        # pprint.pprint(self.user_agents)
 
         # Detect cache server at init
         if cache_server:
@@ -177,6 +182,26 @@ class PreCache(object):
         if KeyboardInterrupt or SystemExit:
             print('')
             sys.exit(1)
+
+    def sw_vers_version(self):
+        return subprocess.check_output(["sw_vers", "-productVersion"]).strip()
+
+    def sw_vers_build(self):
+        return subprocess.check_output(["sw_vers", "-buildVersion"]).strip()
+
+    def app_store_version(self):
+        return plistlib.readPlist(
+            "/Applications/App Store.app/Contents/Info.plist"
+        ).get("CFBundleShortVersionString").strip()
+
+    def webkit_version(self):
+        return NSBundle.bundleForClass_(WKWebView).infoDictionary().get("CFBundleVersion").strip()
+
+    def kernel_version(self):
+        return subprocess.check_output(["sysctl", "kern.osrelease"]).split()[1].strip()
+
+    def cf_network_version(self):
+        return NSBundle.bundleWithIdentifier_("com.apple.CFNetwork").infoDictionary().get("CFBundleVersion").strip()
 
     # Find where the cache server is
     def find_cache_server(self):
@@ -401,10 +426,15 @@ class PreCache(object):
         for item in products:
             packages = updates['Products'][item]['Packages']
             for pkg in packages:
+                # pprint.pprint(pkg)
                 pkg_url = pkg['URL']
+                # pprint.pprint(pkg_url)
                 base_url = os.path.splitext(pkg_url)[0]
+                # pprint.pprint(base_url)
                 smd_url = '%s.smd' % base_url
+                # pprint.pprint(smd_url)
                 basename = os.path.basename(os.path.splitext(pkg_url)[0])
+                # pprint.pprint(basename)
                 for upd in cacheable_updates:
                     if upd in basename and not beta_preview(basename):
                         req = self.url_request(smd_url)
@@ -737,7 +767,13 @@ class PreCache(object):
                         ua = 'precache/%s' % (self.version)
 
                     req = self.url_request(asset.url, user_agent=ua)
-                    if req.info().getheader('Content-Type') is not None:
+
+                    try:
+                        req_header = req.info().getheader('Content-Type')
+                    except AttributeError:
+                        req_header = None
+
+                    if req_header is not None:
                         try:
                             self.log.debug(
                                 ' Fetch attempt: %s' % (asset.url)
@@ -781,7 +817,10 @@ class PreCache(object):
                                                              asset.version,
                                                              asset.url))
                     else:
-                        req.close()
+                        try:
+                            req.close()
+                        except AttributeError:
+                            pass
                         print(
                             'Skipped: %s (%s) - in cache' % (
                                 asset.model, asset.version

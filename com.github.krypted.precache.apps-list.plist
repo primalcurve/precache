@@ -43,7 +43,7 @@
 		<key>type</key>
 		<string>installer</string>
 		<key>url</key>
-        <string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple118/v4/1a/a1/74/1aa174fe-90b0-eb1f-c96a-3c13cf191052/par759846163980697280.pkg</string>
+		<string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple118/v4/1a/a1/74/1aa174fe-90b0-eb1f-c96a-3c13cf191052/par759846163980697280.pkg</string>
 		<key>version</key>
 		<string>10.12.6</string>
 	</dict>
@@ -52,7 +52,7 @@
 		<key>type</key>
 		<string>installer</string>
 		<key>url</key>
-        <string>http://swcdn.apple.com/content/downloads/29/03/091-94326/45lbgwa82gbgt7zbgeqlaurw2t9zxl8ku7/InstallESDDmg.pkg</string>
+		<string>http://swcdn.apple.com/content/downloads/29/03/091-94326/45lbgwa82gbgt7zbgeqlaurw2t9zxl8ku7/InstallESDDmg.pkg</string>
 		<key>version</key>
 		<string>10.13.6</string>
 	</dict>
@@ -61,7 +61,7 @@
 		<key>type</key>
 		<string>installer</string>
 		<key>url</key>
-        <string>http://swcdn.apple.com/content/downloads/22/46/041-31308/r39g613fmms2li42if9r120zwn2bn7rnhn/InstallESDDmg.pkg</string>
+		<string>http://swcdn.apple.com/content/downloads/22/46/041-31308/r39g613fmms2li42if9r120zwn2bn7rnhn/InstallESDDmg.pkg</string>
 		<key>version</key>
 		<string>10.14.3</string>
 	</dict>
