@@ -47,7 +47,7 @@
 		<key>version</key>
 		<string>10.12.6</string>
 	</dict>
-	<key>High Sierra</key>
+	<key>HighSierra</key>
 	<dict>
 		<key>type</key>
 		<string>installer</string>
