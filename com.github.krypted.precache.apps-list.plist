@@ -92,6 +92,15 @@
 		<key>version</key>
 		<string>10.12.5</string>
 	</dict>
+	<key>Mojave</key>
+	<dict>
+		<key>type</key>
+		<string>installer</string>
+		<key>url</key>
+        <string>http://swcdn.apple.com/content/downloads/22/46/041-31308/r39g613fmms2li42if9r120zwn2bn7rnhn/InstallESDDmg.pkg</string>
+		<key>version</key>
+		<string>10.14.3</string>
+	</dict>
 	<key>Xcode</key>
 	<dict>
 		<key>type</key>
