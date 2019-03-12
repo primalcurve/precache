@@ -11,86 +11,50 @@
 		<key>version</key>
 		<string>10.11.6</string>
 	</dict>
-	<key>FinalCutPro</key>
-	<dict>
-		<key>type</key>
-		<string>app</string>
-		<key>url</key>
-        <string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple117/v4/2e/b9/34/2eb9344b-317d-0367-d9e8-fe9cc45e3ab9/luk7632056848069070249.pkg</string>
-		<key>version</key>
-		<string>10.3.4</string>
-	</dict>
-	<key>GarageBand</key>
-	<dict>
-		<key>type</key>
-		<string>app</string>
-		<key>url</key>
-		<string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple117/v4/1f/b7/f2/1fb7f20f-b517-54eb-64a6-6c66f54b469e/dkf9213242788828583859.pkg</string>
-		<key>version</key>
-		<string>10.2</string>
-	</dict>
-	<key>LogicProX</key>
-	<dict>
-		<key>type</key>
-		<string>app</string>
-		<key>url</key>
-		<string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple111/v4/7e/cb/3d/7ecb3dd8-0e15-7ab3-76d2-3133d6f194b7/mss8491519819973083018.pkg</string>
-		<key>version</key>
-		<string>10.3.1</string>
-	</dict>
-	<key>MainStage</key>
-	<dict>
-		<key>type</key>
-		<string>app</string>
-		<key>url</key>
-		<string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple122/v4/93/35/6e/93356ec5-faa0-b2de-9a14-2c68f96dd746/fpn3972236659411213368.pkg</string>
-		<key>version</key>
-		<string>3.3</string>
-	</dict>
 	<key>Keynote</key>
 	<dict>
 		<key>type</key>
 		<string>app</string>
 		<key>url</key>
-		<string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple127/v4/4c/06/d1/4c06d1a7-a11f-5007-1559-d110983d2950/uok4207324746392610055.pkg</string>
+		<string>http://osxapps.itunes.apple.com/itunes-assets/Purple118/v4/11/2b/97/112b97ef-4bc7-a9a4-d1e3-84c5a60090bb/hms2149399871236266041.pkg</string>
 		<key>version</key>
-		<string>7.2</string>
+		<string>8.3</string>
 	</dict>
 	<key>Numbers</key>
 	<dict>
 		<key>type</key>
 		<string>app</string>
 		<key>url</key>
-		<string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple117/v4/eb/5b/88/eb5b88e8-583d-48ee-3ba5-20c41738c3b1/utt388316018625994914.pkg</string>
+		<string>=http://osxapps.itunes.apple.com/itunes-assets/Purple128/v4/a0/7d/e2/a07de279-983b-4ac5-0109-f2059fd54d74/mog1075871419855285848.pkg</string>
 		<key>version</key>
-		<string>4.2</string>
+		<string>5.3</string>
 	</dict>
 	<key>Pages</key>
 	<dict>
 		<key>type</key>
 		<string>app</string>
 		<key>url</key>
-		<string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple127/v4/c9/77/26/c9772693-6822-d9ef-3d11-2772a7cde73b/wus8330472585258558988.pkg</string>
+		<string>http://osxapps.itunes.apple.com/itunes-assets/Purple118/v4/45/60/06/4560060d-51c0-b98b-af8e-59200e69e27a/wkg5700910398067469555.pkg</string>
 		<key>version</key>
-		<string>6.2</string>
-	</dict>
-	<key>Server</key>
-	<dict>
-		<key>type</key>
-		<string>app</string>
-		<key>url</key>
-		<string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple111/v4/05/c8/80/05c880c6-aaf7-fdad-fb74-2ab84b13bcc1/mxo4945471604858862797.pkg</string>
-		<key>version</key>
-		<string>5.3</string>
+		<string>7.3</string>
 	</dict>
 	<key>Sierra</key>
 	<dict>
 		<key>type</key>
 		<string>installer</string>
 		<key>url</key>
-        <string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple111/v4/86/89/3d/86893d5a-e091-9653-5d20-b22aab180f78/iyu1194865269351609080.pkg</string>
+        <string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple118/v4/1a/a1/74/1aa174fe-90b0-eb1f-c96a-3c13cf191052/par759846163980697280.pkg</string>
 		<key>version</key>
-		<string>10.12.5</string>
+		<string>10.12.6</string>
+	</dict>
+	<key>High Sierra</key>
+	<dict>
+		<key>type</key>
+		<string>installer</string>
+		<key>url</key>
+        <string>http://swcdn.apple.com/content/downloads/29/03/091-94326/45lbgwa82gbgt7zbgeqlaurw2t9zxl8ku7/InstallESDDmg.pkg</string>
+		<key>version</key>
+		<string>10.13.6</string>
 	</dict>
 	<key>Mojave</key>
 	<dict>
@@ -106,18 +70,18 @@
 		<key>type</key>
 		<string>app</string>
 		<key>url</key>
-		<string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple127/v4/8b/96/1e/8b961e54-037f-e71a-1b87-3a4dba8d34a7/eds8725065355495051464.pkg</string>
+		<string>http://osxapps.itunes.apple.com/itunes-assets/Purple128/v4/ef/fc/3a/effc3a28-244d-aff0-36e9-f3d445a62f21/zmm4043378376811159710.pkg</string>
 		<key>version</key>
-		<string>8.3.3</string>
+		<string>10.1</string>
 	</dict>
 	<key>iMovie</key>
 	<dict>
 		<key>type</key>
 		<string>app</string>
 		<key>url</key>
-		<string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple19/v4/4a/2c/53/4a2c5393-b946-ee89-6066-6dc7ba95ea62/uhp1463823430642787132.pkg</string>
+		<string>http://osxapps.itunes.apple.com/itunes-assets/Purple128/v4/27/82/a4/2782a49b-660d-0ef1-4311-158645d4e278/yrz6822230104013234184.pkg</string>
 		<key>version</key>
-		<string>10.1.6</string>
+		<string>10.1.10</string>
 	</dict>
 </dict>
 </plist>
