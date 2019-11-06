@@ -2,15 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ElCapitan</key>
-	<dict>
-		<key>type</key>
-		<string>installer</string>
-		<key>url</key>
-		<string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple20/v4/dc/94/05/dc940501-f06f-2a91-555e-3dc272653af5/izt4803713449411067066.pkg</string>
-		<key>version</key>
-		<string>10.11.6</string>
-	</dict>
 	<key>Keynote</key>
 	<dict>
 		<key>type</key>
@@ -38,32 +29,14 @@
 		<key>version</key>
 		<string>7.3</string>
 	</dict>
-	<key>Sierra</key>
-	<dict>
-		<key>type</key>
-		<string>installer</string>
-		<key>url</key>
-		<string>http://osxapps.itunes.apple.com/apple-assets-us-std-000001/Purple118/v4/1a/a1/74/1aa174fe-90b0-eb1f-c96a-3c13cf191052/par759846163980697280.pkg</string>
-		<key>version</key>
-		<string>10.12.6</string>
-	</dict>
-	<key>HighSierra</key>
-	<dict>
-		<key>type</key>
-		<string>installer</string>
-		<key>url</key>
-		<string>http://swcdn.apple.com/content/downloads/29/03/091-94326/45lbgwa82gbgt7zbgeqlaurw2t9zxl8ku7/InstallESDDmg.pkg</string>
-		<key>version</key>
-		<string>10.13.6</string>
-	</dict>
 	<key>Mojave</key>
 	<dict>
 		<key>type</key>
 		<string>installer</string>
 		<key>url</key>
-		<string>http://swcdn.apple.com/content/downloads/22/46/041-31308/r39g613fmms2li42if9r120zwn2bn7rnhn/InstallESDDmg.pkg</string>
+		<string>http://swcdn.apple.com/content/downloads/17/32/061-26589-A_8GJTCGY9PC/25fhcu905eta7wau7aoafu8rvdm7k1j4el/InstallESDDmg.pkg</string>
 		<key>version</key>
-		<string>10.14.3</string>
+		<string>10.14.6</string>
 	</dict>
 	<key>Xcode</key>
 	<dict>
